@@ -27,25 +27,24 @@
                  <div class="col-sm-5 col-md-7 col-lg-8">
                     <div class="row">
                         <div class="col-sm-2 col-md-2 col-lg-2">
-                            <h1> <a href="../controller/accueil_c.php"><img class="img-responsive logo" src="../img/logoBB.png" alt="icone html5" />  </a></h1>
+                            <h1> <a href="../controller/chronologie_user_c.php"><img class="img-responsive logo" src="../img/logoBB.png" alt="icone html5" />  </a></h1>
 
                         </div>
                         <div class="col-sm-2 col-md-2 col-lg-2 miniheader">
-                            <a href="../controller/chronologie_c.php" >
-                            <img class="img-responsive img-circle miniphotoheader" src="../img/profil/<?php echo $_SESSION['img_profil']; ?>"  alt="icone html5" /></a>
+                            <img class="img-responsive img-circle miniphotoheader" src="../img/profil/<?php echo $_SESSION['img_profil']; ?>"  alt="icone html5" />
                         </div>
                         <div class="col-sm-3 col-md-3 col-lg-3 ">
-                            <h3 class="lilili"> Bonjour<a href="../controller/chronologie_c.php" class="lilili" > <?php echo $pseudo; ?></h3> </a> </h3>
+                            <!--<h3 class="lilili"> Bonjour  <?php echo $pseudo; ?> </h3>-->
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-7 col-md-5  col-lg-4">
                     <div class="col-sm-4 col-md-4 col-lg-4 ">
-                        <h1><a href="../controller/post_c.php"><span class="glyphicon glyphicon-file lilili"  aria-hidden="true"></span> </a></h1>
+                        <h1><a href="../controller/submit_c.php"><span class="glyphicon glyphicon-file lilili"  aria-hidden="true"></span> </a></h1>
                         <h4 class="lilili"> PUBLIER </h4>
                     </div>
                     <div class="col-sm-4 col-md-4 col-lg-4">
-                        <h1> <a href="../controller/box_c.php"><span class="glyphicon glyphicon-user lilili " aria-hidden="true"> </span> </a></h1>
+                        <h1> <a href="../controller/doctors_c.php"><span class="glyphicon glyphicon-user lilili " aria-hidden="true"> </span> </a></h1>
                         <h4 class="lilili"> DOCTORS </h4>
                     </div>
                     <div class="col-sm-4 col-md-4 col-lg-4">

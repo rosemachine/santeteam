@@ -1,10 +1,40 @@
 
 html{
   height: 100%;
-
-      overflow-x: hidden;
+ overflow-x: hidden;
 }
 
+.titleNP{
+
+color:  rgb(34, 66, 124, 0.8);
+}
+
+.formcolonne {
+
+position : right;
+  text-align: left;
+  width : 100%;
+
+}
+
+h3, label {
+text-align: left; 
+  color : rgb(34, 66, 124, 0.5);
+
+}
+
+textarea {
+  width : 400px;
+
+}
+
+.formdroit{
+display : block;
+float : left;
+  color : rgb(34, 66, 124, 0.5);
+
+
+}
 
 body{
   height: 100%;
@@ -23,15 +53,31 @@ body{
 header{
 width: 102%;
   background-color:  rgb(255,255,255,0.5) ;
+
 }
 
 section {
 
 }
 
+
 .logo{
   width : 70px; 
 }
+
+.boutonsub {
+  margin-top: 30px; 
+text-align: middle;
+position : right;
+  width:85px;
+  height:85px;
+  background:#fafafa;
+  box-shadow:2px 2px 8px #aaa;
+  font:bold 13px Arial;
+  border-radius:50%;
+  color:#555;
+}
+
 
 footer {
   width: 102%;
@@ -39,12 +85,11 @@ footer {
  background-color: rgb(255,255,255,0.5) ;
     left: 0;
     right: 0;
-    bottom: 0;
-    min-height: 60px;
     position: absolute;
-    padding-top: 20px;
+    bottom: 0px;
+    min-height: 60px;
+    padding-top: 50px;
   color : rgb(34, 66, 124, 0.8);
-    display: block;
 
 }
 aside {

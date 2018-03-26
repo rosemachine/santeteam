@@ -7,7 +7,7 @@ body
 {
 	
 	font-family: Arial Narrow;
-	background-image: url(background-site.jpg);
+	background-image: url(../img/background-site.jpg);
 	min-height: 100vh;
 }
 
@@ -69,6 +69,7 @@ footer
   	background-color: rgba(239, 239, 239,0.5);
   	text-align: center;
   	display: inline-flex;
+  	
 
 }
 
