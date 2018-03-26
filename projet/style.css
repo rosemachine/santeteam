@@ -1,0 +1,104 @@
+/*GENERAL*/
+header {
+	font-family : verdana;
+	font-size : 20px;
+}
+body
+{
+	
+	font-family: Arial Narrow;
+	background-image: url(background-site.jpg);
+	min-height: 100vh;
+}
+
+#container 
+{
+	width: 70%;
+	height: 100%;
+	background-color: blue; 
+	text-align: center;
+	margin: auto;
+	padding: 30px;
+	border-right : 3px solid white;
+	border-left: 3px solid white;
+	background-color: rgba(255, 255,255, 0.5) ; 
+}
+
+#text
+{
+	text-align: left;
+		padding: 50px;
+
+	/*ICI JE VOUDRAIS FAIRE UN PADDING*/
+}
+
+nav ul {
+	padding: 0px;
+	margin: 0px;
+	list-style-type:none;
+	background-color: black;
+}
+
+nav li {
+	display : inline-block;
+	width: 20%;
+	height: 40px;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	line-height: 40px;
+}
+
+nav li:hover{
+	background-color: rgba(255, 255,255, 0.3) ; 
+}
+
+nav li a {
+	display: block;
+	text-decoration: none;
+	color:white;
+}
+footer
+{
+	font-size: 80%;
+	position: absolute;
+ 	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	padding: 1rem;
+  	background-color: rgba(239, 239, 239,0.5);
+  	text-align: center;
+  	display: inline-flex;
+
+}
+
+
+/*INDEX*/
+#gauche 
+{
+	display: inline-flex;
+	flex-direction: row;
+	border-right: 1px solid black;
+	margin: auto;
+	flex-wrap: wrap;
+	text-align: right;
+}
+
+#droite
+{
+	display: inline-flex;
+	flex-direction: row;
+	margin: auto;
+	flex-wrap: wrap;
+	text-align: right;
+}
+
+label
+{
+	display: block;
+	width: 150px;
+	float: left;
+}
+
+
+/*FAIRE UNE BELLE MISE EN PAGE DES CHECKBOX*/	
