@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -40,65 +41,76 @@
                       <p><input type="submit" value="OK"></p>
                 </form></br></br></br></br></br></br></br></br>     
             </div> 
-
             <footer>
                 <p><br/>Copyright RNA-m - 2018<br/></p>
             </footer>
         </div>
+        <?php 
+            echo '<br><br>test A <br>';
+            $validate=0;
+            $config = include('config.php');
+            $connection = new mysqli($config['host'],$config['username'],$config['password'],$config['database']);
 
-<?php 
-echo '<br><br>test A <br>';
-$validate=0;
-$config = include('config.php');
-$connection = new mysqli($config['host'],$config['username'],$config['password'],$config['database']);
+            if(mysqli_connect_errno()) {
+              die('Could not connect'.mysqli_connect_errno());
+              unset($connection);
+            }
+  /*          else {
+              echo 'Connected successfully'."<br>";
+            }
 
-if(mysqli_connect_errno())
-{
-  die('Could not connect'.mysqli_connect_errno());
-  unset($connection);
-}
-else 
-{
-  echo 'Connected successfully'."<br>";
-}
+            echo "$validate <br>";
+*/
+            if(isset($_POST["login"]))  {
+              $userLogin=$_POST["login"];
+            } 
+            else echo "error login<br>";
+            if(isset($_POST["password"])) {
+              $userPassword=$_POST["password"];
+            } 
+            else echo "error password<br>";
 
-echo "$validate <br>";
+            $request='SELECT password FROM patient WHERE mail=? AND password=?';
+            $req_pre = mysqli_prepare($connection, $request);
 
-if(isset($_POST["login"]))
-{
-  $userLogin=$_POST["login"];
-} 
-else echo "error login<br>";
-if(isset($_POST["password"]))
-{
-  $userPassword=$_POST["password"];
-} 
-else echo "error password<br>";
+            mysqli_stmt_bind_param($req_pre, "ss",$userLogin,$userPassword);
+            mysqli_stmt_execute($req_pre);
+            mysqli_stmt_bind_result($req_pre,$mdp);
+/*
+            echo "test B<br>";
+            echo"User = $userLogin <br>Password = $userPassword<br><br>";
+            echo"$mdp";
+*/
+            while(mysqli_stmt_fetch($req_pre))  {   
+                if(isset($mdp)) {
+                    echo"login et mdp ok<br>";
+                    $validate=1;        
+                }   
+              }
 
-$request='SELECT password FROM patient WHERE mail=? AND password=?';
-$req_pre = mysqli_prepare($connection, $request);
+              if ($validate) {
+                  $_SESSION['mail'] = $userLogin;
+                  $_SESSION['password'] = $userPassword;
+                  echo"password-session : $_SESSION[password] <br>"; //ok
 
-mysqli_stmt_bind_param($req_pre, "ss",$userLogin,$userPassword);
-mysqli_stmt_execute($req_pre);
-mysqli_stmt_bind_result($req_pre,$mdp);
-echo "test B<br>";
-echo"User = $userLogin <br>Password = $userPassword<br><br>";
-echo"$mdp";
+                  $request='SELECT idp FROM patient WHERE mail=? AND password=?';
+                  $req_pre = mysqli_prepare($connection, $request);
 
-while(mysqli_stmt_fetch($req_pre))
-  {   
-    if(isset($mdp))
-    {
-      echo"login et mdp ok<br>";
-      $validate=1;
-      header('Location: http://localhost/projetteam/user.php');
-    }   
-  }
+                  mysqli_stmt_bind_param($req_pre, "ss",$userLogin,$userPassword);
+                  mysqli_stmt_execute($req_pre);
+                  mysqli_stmt_bind_result($req_pre,$userIdp);
 
-echo"<br>Validate = $validate"; 
+                  while(mysqli_stmt_fetch($req_pre)) {
+                    //  echo "test C<br>";
+                     // echo"id = $userIdp <br><br>";
+                    $_SESSION['idp'] = $userIdp;
+                    echo"idp-session : $_SESSION[idp] <br>"; //ok
 
-
-?>
+                  }
+                  header('Location: http://localhost/projetteam/user.php');
+              }
+            echo"<br>Validate = $validate"; 
+        ?>
 
     </body>
 </html>
