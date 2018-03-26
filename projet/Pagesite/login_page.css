@@ -1,0 +1,31 @@
+body
+{
+	text-align: center;
+	font-family: Arial Narrow;
+	background-image: url(background-site.jpg);
+	padding: 50px;
+}
+form 
+{
+    width: 80%;
+    margin: 0 auto;
+}
+
+label, input 
+{
+    display: inline-block;
+}
+
+label 
+{
+    width: 20%;
+    text-align: right;
+}
+
+label + input 
+{
+    width: 40%;
+    margin: 0 20% 0 4%;
+}
+
+

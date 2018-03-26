@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<metacharset= "utf-8"/> 
+	<metaname="keywords" content="test, page, web"/>
+	<linktype="text/css" rel="path/style.css" />
+	<title> DP Link </title>
+	<script> <!--JS Scripts --> </script>
+	<link rel="stylesheet" type="text/css" href="register_page.css"/>
+</head>
+<body>
+	<h1> Register Page </h1>
+	<form action="/action_page.html" method="get">
+		<p>
+			<label for="first name"> First Name: </label>
+			<input type="text" name="first name" id="first name" placeholder="ex: Sean"/>
+			<label for="last name"> Last Name: </label>
+			<input type="text" name="last name" id="last name" placeholder="ex: BROWN"/>
+			<label for="email"> email: </label>
+			<input type="email" name="email" id="email" placeholder="ex: sean.brown@gmail.com" size="25" />
+			<label for="birth date"> Birth Date: </label>
+			<input type="date" name="birth date" id="birth date" placeholder="ex: mm/jj/aaaa"/>
+	
+			<div id="doctorPatient">
+				<label for="doctor"> DOCTOR:<input type="radio" name="profession" value="doctor" id="doctor"/>
+				</label>			
+				<label for="patient"> PATIENT:<input type="radio" name="profession" value="patient" id="patient"/> 
+				</label>
+			</div>
+
+			<label for="password"> Password: </label>
+			<input type="password" name="password" id="password"/> <br>
+			<label for="c_password"> Confirm your Password: </label>
+			<input type="password" name="password" id="c_password"/> <br> <br>
+		</p>
+	</form>
+	<input type="submit" name="send" value="SEND"/>
+	<a href="main_page.html">Main page </a>
+</body>
+</html>

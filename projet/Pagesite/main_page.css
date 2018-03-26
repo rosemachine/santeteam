@@ -1,0 +1,60 @@
+body
+{
+	text-align: center;
+	font-family: Arial Narrow;
+	background-image: url(background-site.jpg);
+}
+
+header
+{
+	font-style: bold;
+	margin-top: 30px;
+	color: #008708;
+	font-size: 120%;
+	border-color: #008708;
+	border-style: solid;
+	border-radius: 30px;
+	display: inline-flex;
+	background-color: #99FFCC;
+	padding:20px;
+}
+h1
+{
+	position: relative;
+	top:25px;
+}
+#logo
+{
+	height: 150px;
+}
+
+footer
+{
+	font-size: 80%;
+	position: absolute;
+ 	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	padding: 1rem;
+  	background-color: rgba(239, 239, 239,0.5);
+  	text-align: center;
+}
+
+#paratext
+{
+	font-style: italic;
+	font-size: 110%;
+}
+
+#links
+{
+	color: #008708;
+	font-weight:bold;
+	display:inline-block;
+	width: 200px;
+	border-style: solid;
+	border-color: rgba(0, 135, 8);
+	text-align: center;
+	padding: : auto;
+	background-color:rgba(153, 255, 204,0.6);
+}
