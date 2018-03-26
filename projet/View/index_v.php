@@ -2,9 +2,10 @@
 <html>
     <head>
         <meta charset="utf-8" />
-         <link rel="stylesheet" href="style.css" />
+         <link rel="stylesheet" href="../style/style.css" />
         <title>PATIENTBOOK</title>
     </head>
+
     <body>
         <div id="container">
             <header>
@@ -18,7 +19,7 @@
                 </ul>
             </nav>
             <h2>Welcome to the Patient Book</h2>
-            <div id="gauche">		               
+            <div id="gauche">                  
                 <form action="register.php" method="post" id="text">
                   <h3>Register here for the first time !</h3></br>          
                       <label for="user">I am :</label><input type="radio" name="user" id="user" />Patient <input type="radio" name="user" />Doctor<br />
@@ -40,11 +41,10 @@
                       <p><input type="submit" value="OK"></p>
                 </form></br></br></br></br></br></br></br></br>     
             </div> 
-    		    <footer>
+            <footer>
                 <p><br/>Copyright RNA-m - 2018<br/></p>
             </footer>
         </div>
     </body>
 </html>
-<?php
 
