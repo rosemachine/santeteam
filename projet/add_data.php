@@ -41,10 +41,4 @@ if(isset($connection))
 	mysqli_stmt_execute($req_pre);
 }
 
-
-
-
-
-
-
  ?>
