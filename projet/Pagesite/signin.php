@@ -1,4 +1,5 @@
 <?php 
+session_start();
             echo '<br><br>test A <br>';
             $validate=0;
             $config = include('config.php');
@@ -34,9 +35,8 @@
             }
 
               if ($validate) {
-                  $_SESSION['mail'] = $userLogin;
-                  $_SESSION['password'] = $userPassword;
-                  echo"password-session : $_SESSION[password] <br>"; //ok
+                  
+                  echo"password-session :" . $_SESSION["password"] . "<br>"; //ok
 
                   $request='SELECT idp FROM patient WHERE mail=? AND password=?';
                   $req_pre = mysqli_prepare($connection, $request);
@@ -44,16 +44,20 @@
                   mysqli_stmt_bind_param($req_pre, "ss",$userLogin,$userPassword);
                   mysqli_stmt_execute($req_pre);
                   mysqli_stmt_bind_result($req_pre,$userIdp);
-$_SESSION['idp'] = -1;
+                  $_SESSION['idp'] = -1;
                     
                   while(mysqli_stmt_fetch($req_pre)) {
                     //  echo "test C<br>";
-                     echo"id = $userIdp <br><br>";
-                    $_SESSION['idp'] = $userIdp;
-                    echo"idp-session : $_SESSION[idp] <br>"; //ok
+                     //echo"id = $userIdp <br><br>";
+                    //echo"idp-session : " . $_SESSION['idp'] . "<br>"; //ok
 
                   }
-                  header('Location: http://localhost/santeteam/projet/Pagesite/user.php');
+                  header('Status: 301 Moved Permanently', false, 301);
+                  header('Location: user.php');
+                  $_SESSION['idp'] = $userIdp;
+                  $_SESSION['mail'] = $userLogin;
+                  $_SESSION['password'] = $userPassword;
+                  exit();
               }
             echo"<br>Validate = $validate"; 
         ?>
