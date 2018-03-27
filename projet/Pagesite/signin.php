@@ -1,4 +1,4 @@
-<?php 
+<?php session_start(); 
             echo '<br><br>test A <br>';
             $validate=0;
             $config = include('config.php');
