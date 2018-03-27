@@ -21,7 +21,7 @@
             <h2>LA PAGE D'ACCUEIL </h2>   
           
             <?php  
-          //  echo"idp-session : $_SESSION[idp] <br>";
+            echo"idp-session : $_SESSION[mail] <br>";
             
             $bdd = new PDO('mysql:host=localhost;dbname=patientbook;charset=utf8', 'root', '');
             $req = $bdd->prepare('SELECT * FROM patient WHERE idp = :idp');
